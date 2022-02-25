@@ -1,0 +1,76 @@
+Archive member included to satisfy reference by file (symbol)
+
+/opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+                              build/print.o (__udivsi3)
+
+Discarded input sections
+
+ .debug_line    0x0000000000000000      0x153 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+ .debug_line_str
+                0x0000000000000000       0x60 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+ .debug_info    0x0000000000000000       0x25 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+ .debug_abbrev  0x0000000000000000       0x14 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+ .debug_str     0x0000000000000000       0x7b /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build/print.o
+LOAD build/firmware.o
+LOAD build/start.o
+
+.memory         0x0000000000000000      0x2d4
+                0x0000000000000000                . = 0x0
+ *(.init)
+ .init          0x0000000000000000       0x8c build/start.o
+ *(.text)
+ .text          0x000000000000008c       0xdc build/print.o
+                0x000000000000008c                print_chr
+                0x0000000000000098                print_str
+                0x00000000000000b4                print_dec
+                0x0000000000000134                print_hex
+ .text          0x0000000000000168        0x0 build/firmware.o
+ .text          0x0000000000000168        0x0 build/start.o
+ .text          0x0000000000000168       0xb4 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+                0x0000000000000168                __divsi3
+                0x0000000000000170                __udivsi3
+                0x00000000000001b8                __umodsi3
+                0x00000000000001ec                __modsi3
+ *(*)
+ .data          0x000000000000021c        0x0 build/print.o
+ .bss           0x000000000000021c        0x0 build/print.o
+ .rodata.str1.4
+                0x000000000000021c       0x11 build/print.o
+ .comment       0x000000000000022d       0x1b build/print.o
+                                         0x1c (size before relaxing)
+ .riscv.attributes
+                0x0000000000000248       0x1c build/print.o
+ .data          0x0000000000000264        0x0 build/firmware.o
+ .bss           0x0000000000000264        0x0 build/firmware.o
+ .rodata.str1.4
+                0x0000000000000264        0xd build/firmware.o
+ *fill*         0x0000000000000271        0x3 
+ .text.startup  0x0000000000000274        0x8 build/firmware.o
+                0x0000000000000274                main
+ .comment       0x000000000000027c       0x1c build/firmware.o
+ .riscv.attributes
+                0x000000000000027c       0x1c build/firmware.o
+ .data          0x0000000000000298        0x0 build/start.o
+ .bss           0x0000000000000298        0x0 build/start.o
+ .riscv.attributes
+                0x0000000000000298       0x1a build/start.o
+ .data          0x00000000000002b2        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+ .bss           0x00000000000002b2        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+ .riscv.attributes
+                0x00000000000002b2       0x1f /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+                0x00000000000002d4                . = ALIGN (0x4)
+ *fill*         0x00000000000002d1        0x3 
+                0x00000000000002d4                end = .
+LOAD /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a
+OUTPUT(firmware.elf elf32-littleriscv)
