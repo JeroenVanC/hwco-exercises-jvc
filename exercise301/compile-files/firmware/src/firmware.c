@@ -6,6 +6,6 @@ void main(void) {
 
 	uint32_t sin = sinus(60);
 
-	print_str("sinus value:")
+	print_str("sinus value:");
 	print_hex(sin, 8);
 }
