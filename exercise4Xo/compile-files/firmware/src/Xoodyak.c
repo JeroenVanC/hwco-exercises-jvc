@@ -180,7 +180,7 @@ void Xoodoo_Permute(xoodyak_state *state){
     //     Xoodoo_Round(stateAsWords, RC[i]);
     // }
 
-    roundHWSW_reg(stateAsWords, RC[1]);
+    roundHWSW_reg(stateAsWords, RC[0]);
 
     Xoodoo_WordsToState(stateAsWords, state);
 
