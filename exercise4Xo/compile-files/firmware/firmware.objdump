@@ -303,7 +303,7 @@ Disassembly of section .memory:
  434:	00460613          	addi	a2,a2,4
  438:	01058593          	addi	a1,a1,16
  43c:	fb1618e3          	bne	a2,a7,3ec <Xoodoo_Permute+0x28>
- 440:	03800593          	li	a1,56
+ 440:	05800593          	li	a1,88
  444:	00040513          	mv	a0,s0
  448:	d31ff0ef          	jal	ra,178 <roundHWSW_reg>
  44c:	00000613          	li	a2,0
