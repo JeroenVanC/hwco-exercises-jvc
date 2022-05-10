@@ -1,6 +1,7 @@
 #ifndef XOODHWC_C
 #define XOODHWC_C
 
+#include <stdint.h>
 #include "XodHwCoupeling.h"
 
 void roundHWSW_reg(uint32_t *stateAsWords, uint32_t rc)

@@ -1,6 +1,8 @@
 #ifndef XOODHWC_H
 #define XOODHWC_H
 
+#include <stdint.h>
+
 #define XOODYAK_BASE_ADDR 0x81100000
 
 #define  STATE_REG_in_0 (*(volatile unsigned int *)(XOODYAK_BASE_ADDR + 0 * 4))
