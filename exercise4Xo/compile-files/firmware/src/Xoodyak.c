@@ -1,4 +1,5 @@
 #include "Xoodyak.h"
+#include "XodHwCoupeling.h"
 
 static void cyclist_down(struct cyclist *c, unsigned char *Xi, unsigned int Xi_len, unsigned int cd);
 static void cyclist_up(struct cyclist *c, unsigned char *Yi, unsigned int Yi_len, unsigned char cu);
@@ -175,9 +176,11 @@ void Xoodoo_Permute(xoodyak_state *state){
     uint32_t stateAsWords[XOODYAK_NUMOF_PLANES*XOODYAK_NUMOF_SHEETS];
     Xoodoo_StateToWords(state, stateAsWords);
 
-    for (int i = 0; i < XOODYAK_ROUNDS; i++){
-        Xoodoo_Round(stateAsWords, RC[i]);
-    }
+    // for (int i = 0; i < XOODYAK_ROUNDS; i++){
+    //     Xoodoo_Round(stateAsWords, RC[i]);
+    // }
+
+    roundHWSW_reg(stateAsWords, RC[1]);
 
     Xoodoo_WordsToState(stateAsWords, state);
 
