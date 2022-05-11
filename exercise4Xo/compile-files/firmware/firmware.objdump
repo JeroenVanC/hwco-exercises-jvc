@@ -73,7 +73,7 @@ Disassembly of section .memory:
   ec:	02e7a223          	sw	a4,36(a5)
   f0:	02852703          	lw	a4,40(a0)
   f4:	02e7a423          	sw	a4,40(a5)
-  f8:	02c52703          	lw	a4,44(a0)
+  f8:	fff00713          	li	a4,-1
   fc:	02e7a623          	sw	a4,44(a5)
  100:	00100713          	li	a4,1
  104:	02e7a823          	sw	a4,48(a5)
