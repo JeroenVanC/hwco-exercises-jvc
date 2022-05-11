@@ -181,7 +181,8 @@ void Xoodoo_Permute(xoodyak_state *state){
     //     Xoodoo_Round(stateAsWords, RC[i]);
     // }
 
-    print_hex(stateAsWords[0], 8);
+    print_str("ST");
+    print_hex(stateAsWords[1], 8);
     roundHWSW_reg(stateAsWords, RC[0]);
 
     Xoodoo_WordsToState(stateAsWords, state);
