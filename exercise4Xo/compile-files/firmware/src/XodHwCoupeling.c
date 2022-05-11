@@ -20,6 +20,8 @@ void roundHWSW_reg(uint32_t *stateAsWords, uint32_t rc)
     STATE_REG_in_11 = stateAsWords[11];
 
     // 12de register 1 zetten | control-register
+    
+    //test
     ENABLE_CTRL = 0x00000001U;
 
 }
