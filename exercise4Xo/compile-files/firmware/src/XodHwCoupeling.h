@@ -18,7 +18,8 @@
 #define  STATE_REG_in_10 (*(volatile unsigned int *)(XOODYAK_BASE_ADDR + 10 * 4))
 #define  STATE_REG_in_11 (*(volatile unsigned int *)(XOODYAK_BASE_ADDR + 11 * 4))
 
-#define  STATE_REG_out_0 (*(volatile unsigned int *)(XOODYAK_BASE_ADDR + 12 * 4))
+#define  ENABLE_CTRL (*(volatile unsigned int *)(XOODYAK_BASE_ADDR + 12 * 4))
+
 #define  STATE_REG_out_1 (*(volatile unsigned int *)(XOODYAK_BASE_ADDR + 13 * 4))
 #define  STATE_REG_out_2 (*(volatile unsigned int *)(XOODYAK_BASE_ADDR + 14 * 4))
 #define  STATE_REG_out_3 (*(volatile unsigned int *)(XOODYAK_BASE_ADDR + 15 * 4))
