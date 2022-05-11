@@ -68,13 +68,12 @@ LOAD build/start.o
  .data          0x00000000000007b4        0x0 build/Xoodyak.o
  .bss           0x00000000000007b4        0x0 build/Xoodyak.o
  .rodata.str1.4
-                0x00000000000007b4        0x3 build/Xoodyak.o
- .comment       0x00000000000007b7       0x11 build/Xoodyak.o
+                0x00000000000007b4        0x4 build/Xoodyak.o
+ .comment       0x00000000000007b8       0x11 build/Xoodyak.o
  .riscv.attributes
-                0x00000000000007b7       0x1c build/Xoodyak.o
- .data          0x00000000000007d3        0x0 build/firmware.o
- .bss           0x00000000000007d3        0x0 build/firmware.o
- *fill*         0x00000000000007d3        0x1 
+                0x00000000000007b8       0x1c build/Xoodyak.o
+ .data          0x00000000000007d4        0x0 build/firmware.o
+ .bss           0x00000000000007d4        0x0 build/firmware.o
  .rodata.str1.4
                 0x00000000000007d4        0xe build/firmware.o
  *fill*         0x00000000000007e2        0x2 

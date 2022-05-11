@@ -244,7 +244,7 @@ Disassembly of section .memory:
  368:	fb1618e3          	bne	a2,a7,318 <Xoodoo_Permute+0x28>
  36c:	7b400513          	li	a0,1972
  370:	290000ef          	jal	ra,600 <print_str>
- 374:	00412503          	lw	a0,4(sp)
+ 374:	00012503          	lw	a0,0(sp)
  378:	00800593          	li	a1,8
  37c:	320000ef          	jal	ra,69c <print_hex>
  380:	05800593          	li	a1,88
@@ -550,18 +550,20 @@ Disassembly of section .memory:
  7ae:	6932                	flw	fs2,12(sp)
  7b0:	7032                	flw	ft0,44(sp)
  7b2:	0030                	addi	a2,sp,8
- 7b4:	41005453          	.4byte	0x41005453
- 7b8:	0000001b          	.4byte	0x1b
- 7bc:	6972                	flw	fs2,28(sp)
- 7be:	00766373          	csrrsi	t1,0x7,12
- 7c2:	1101                	addi	sp,sp,-32
- 7c4:	0000                	unimp
- 7c6:	0400                	addi	s0,sp,512
- 7c8:	0510                	addi	a2,sp,640
- 7ca:	7672                	flw	fa2,60(sp)
- 7cc:	32693233          	.4byte	0x32693233
- 7d0:	3070                	fld	fa2,224(s0)
- 7d2:	0000                	unimp
+ 7b4:	003a5453          	fadd.s	fs0,fs4,ft3,unknown
+ 7b8:	1b41                	addi	s6,s6,-16
+ 7ba:	0000                	unimp
+ 7bc:	7200                	flw	fs0,32(a2)
+ 7be:	7369                	lui	t1,0xffffa
+ 7c0:	01007663          	bgeu	zero,a6,7cc <__modsi3+0x74>
+ 7c4:	0011                	c.nop	4
+ 7c6:	0000                	unimp
+ 7c8:	1004                	addi	s1,sp,32
+ 7ca:	7205                	lui	tp,0xfffe1
+ 7cc:	3376                	fld	ft6,376(sp)
+ 7ce:	6932                	flw	fs2,12(sp)
+ 7d0:	7032                	flw	ft0,44(sp)
+ 7d2:	0030                	addi	a2,sp,8
  7d4:	534d                	li	t1,-13
  7d6:	003d2047          	fmsub.s	ft0,fs10,ft3,ft0,rdn
  7da:	0000                	unimp
