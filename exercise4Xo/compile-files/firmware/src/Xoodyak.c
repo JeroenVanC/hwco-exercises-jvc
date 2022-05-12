@@ -181,9 +181,10 @@ void Xoodoo_Permute(xoodyak_state *state){
     //     Xoodoo_Round(stateAsWords, RC[i]);
     // }
 
-    print_str("ST:");
+    
 
     for (int i = 0; i < 12; i++){
+        print_str("ST:");
         print_hex(stateAsWords[i], 8);
     }
     

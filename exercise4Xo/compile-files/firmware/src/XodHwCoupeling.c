@@ -17,8 +17,8 @@ void roundHWSW_reg(uint32_t *stateAsWords, uint32_t rc)
     STATE_REG_in_8 = stateAsWords[8];
     STATE_REG_in_9 = stateAsWords[9];
     STATE_REG_in_10 = stateAsWords[10];
-    //STATE_REG_in_11 = stateAsWords[11];
-    STATE_REG_in_11 = 0xFFFFFFFF;
+    STATE_REG_in_11 = stateAsWords[11];
+    //STATE_REG_in_11 = 0xFFFFFFFF;
 
     // 12de register 1 zetten | control-register
     
