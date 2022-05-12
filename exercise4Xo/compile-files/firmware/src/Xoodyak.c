@@ -137,8 +137,9 @@ static void Xoodoo_Round(uint32_t *stateAsWords, uint32_t rc){
         for (y=0; y<XOODYAK_NUMOF_PLANES; ++y)
             stateAsWords[index(x,y)] ^= E[x];
 
-    
-    print_hex(P[0], 6);
+    for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x)
+        print_hex(P[x], 8); // deze printen effe loopje anzetten
+
 
 
     //Rho-west: plane shift 
@@ -181,9 +182,10 @@ void Xoodoo_Permute(xoodyak_state *state){
     uint32_t stateAsWords[XOODYAK_NUMOF_PLANES*XOODYAK_NUMOF_SHEETS];
     Xoodoo_StateToWords(state, stateAsWords);
 
-    // for (int i = 0; i < XOODYAK_ROUNDS; i++){
-    //     Xoodoo_Round(stateAsWords, RC[i]);
-    // }
+    for (int i = 0; i < XOODYAK_ROUNDS; i++){
+        Xoodoo_Round(stateAsWords, RC[i]);
+        print_str("RND");
+    }
 
     
 
