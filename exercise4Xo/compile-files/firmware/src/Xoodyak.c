@@ -140,6 +140,7 @@ static void Xoodoo_Round(uint32_t *stateAsWords, uint32_t rc){
     for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x)
         print_str("P");
         print_hex(P[x], 6);
+        //test
 
     //Rho-west: plane shift 
     for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x) {
