@@ -182,9 +182,9 @@ void Xoodoo_Permute(xoodyak_state *state){
     uint32_t stateAsWords[XOODYAK_NUMOF_PLANES*XOODYAK_NUMOF_SHEETS];
     Xoodoo_StateToWords(state, stateAsWords);
 
-    // for (int i = 0; i < XOODYAK_ROUNDS; i++){
-    //     Xoodoo_Round(stateAsWords, RC[i]);
-    // }
+    for (int i = 0; i < XOODYAK_ROUNDS; i++){
+        Xoodoo_Round(stateAsWords, RC[i]);
+    }
 
     
 
@@ -193,7 +193,7 @@ void Xoodoo_Permute(xoodyak_state *state){
     //     print_hex(stateAsWords[i], 8);
     // }
     
-    roundHWSW_reg(stateAsWords, RC[0]);
+    //roundHWSW_reg(stateAsWords, RC[0]);
 
     Xoodoo_WordsToState(stateAsWords, state);
 
