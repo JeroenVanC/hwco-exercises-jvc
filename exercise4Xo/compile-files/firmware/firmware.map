@@ -27,7 +27,7 @@ LOAD build/firmware.o
 LOAD build/print.o
 LOAD build/start.o
 
-.memory         0x0000000000000000      0x88c
+.memory         0x0000000000000000      0x894
                 0x0000000000000000                . = 0x0
  *(.init)
  .init          0x0000000000000000       0x9c build/start.o
@@ -72,28 +72,28 @@ LOAD build/start.o
                 0x00000000000007a0       0x1c build/Xoodyak.o
  .data          0x00000000000007bc        0x0 build/firmware.o
  .bss           0x00000000000007bc        0x0 build/firmware.o
- .text.startup  0x00000000000007bc       0x48 build/firmware.o
+ .text.startup  0x00000000000007bc       0x50 build/firmware.o
                 0x00000000000007bc                main
- .comment       0x0000000000000804       0x11 build/firmware.o
+ .comment       0x000000000000080c       0x11 build/firmware.o
  .riscv.attributes
-                0x0000000000000804       0x1c build/firmware.o
- .data          0x0000000000000820        0x0 build/print.o
- .bss           0x0000000000000820        0x0 build/print.o
+                0x000000000000080c       0x1c build/firmware.o
+ .data          0x0000000000000828        0x0 build/print.o
+ .bss           0x0000000000000828        0x0 build/print.o
  .rodata.str1.4
-                0x0000000000000820       0x11 build/print.o
- .comment       0x0000000000000831       0x11 build/print.o
+                0x0000000000000828       0x11 build/print.o
+ .comment       0x0000000000000839       0x11 build/print.o
  .riscv.attributes
-                0x0000000000000831       0x1c build/print.o
- .data          0x000000000000084d        0x0 build/start.o
- .bss           0x000000000000084d        0x0 build/start.o
+                0x0000000000000839       0x1c build/print.o
+ .data          0x0000000000000855        0x0 build/start.o
+ .bss           0x0000000000000855        0x0 build/start.o
  .riscv.attributes
-                0x000000000000084d       0x1f build/start.o
- .data          0x000000000000086c        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
- .bss           0x000000000000086c        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+                0x0000000000000855       0x1f build/start.o
+ .data          0x0000000000000874        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+ .bss           0x0000000000000874        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
  .riscv.attributes
-                0x000000000000086c       0x1f /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
-                0x000000000000088c                . = ALIGN (0x4)
- *fill*         0x000000000000088b        0x1 
-                0x000000000000088c                end = .
+                0x0000000000000874       0x1f /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+                0x0000000000000894                . = ALIGN (0x4)
+ *fill*         0x0000000000000893        0x1 
+                0x0000000000000894                end = .
 LOAD /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a
 OUTPUT(firmware.elf elf32-littleriscv)

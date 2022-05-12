@@ -52,7 +52,7 @@ Disassembly of section .memory:
 0000009c <roundHWSW_reg>:
   9c:	00052703          	lw	a4,0(a0)
   a0:	811007b7          	lui	a5,0x81100
-  a4:	00e7a023          	sw	a4,0(a5) # 81100000 <end+0x810ff774>
+  a4:	00e7a023          	sw	a4,0(a5) # 81100000 <end+0x810ff76c>
   a8:	00452703          	lw	a4,4(a0)
   ac:	00e7a223          	sw	a4,4(a5)
   b0:	00852703          	lw	a4,8(a0)
@@ -169,7 +169,7 @@ Disassembly of section .memory:
  24c:	00008067          	ret
 
 00000250 <cyclist_down>:
- 250:	f9010113          	addi	sp,sp,-112 # 3f90 <end+0x3704>
+ 250:	f9010113          	addi	sp,sp,-112 # 3f90 <end+0x36fc>
  254:	06812423          	sw	s0,104(sp)
  258:	06112623          	sw	ra,108(sp)
  25c:	00050413          	mv	s0,a0
@@ -412,7 +412,7 @@ Disassembly of section .memory:
 
 000005e0 <print_chr>:
  5e0:	800007b7          	lui	a5,0x80000
- 5e4:	00a7a023          	sw	a0,0(a5) # 80000000 <end+0x7ffff774>
+ 5e4:	00a7a023          	sw	a0,0(a5) # 80000000 <end+0x7ffff76c>
  5e8:	00008067          	ret
 
 000005ec <print_str>:
@@ -421,7 +421,7 @@ Disassembly of section .memory:
  5f4:	00079463          	bnez	a5,5fc <print_str+0x10>
  5f8:	00008067          	ret
  5fc:	00150513          	addi	a0,a0,1
- 600:	00f72023          	sw	a5,0(a4) # 80000000 <end+0x7ffff774>
+ 600:	00f72023          	sw	a5,0(a4) # 80000000 <end+0x7ffff76c>
  604:	fedff06f          	j	5f0 <print_str+0x4>
 
 00000608 <print_dec>:
@@ -439,7 +439,7 @@ Disassembly of section .memory:
  634:	fff44783          	lbu	a5,-1(s0)
  638:	fff40413          	addi	s0,s0,-1
  63c:	03078793          	addi	a5,a5,48
- 640:	00f72023          	sw	a5,0(a4) # 80000000 <end+0x7ffff774>
+ 640:	00f72023          	sw	a5,0(a4) # 80000000 <end+0x7ffff76c>
  644:	ff2418e3          	bne	s0,s2,634 <print_dec+0x2c>
  648:	01c12083          	lw	ra,28(sp)
  64c:	01812403          	lw	s0,24(sp)
@@ -462,7 +462,7 @@ Disassembly of section .memory:
  688:	fff58593          	addi	a1,a1,-1
  68c:	00001737          	lui	a4,0x1
  690:	00259593          	slli	a1,a1,0x2
- 694:	82070713          	addi	a4,a4,-2016 # 820 <main+0x64>
+ 694:	82870713          	addi	a4,a4,-2008 # 828 <main+0x6c>
  698:	800006b7          	lui	a3,0x80000
  69c:	0005d463          	bgez	a1,6a4 <print_hex+0x1c>
  6a0:	00008067          	ret
@@ -471,7 +471,7 @@ Disassembly of section .memory:
  6ac:	00f707b3          	add	a5,a4,a5
  6b0:	0007c783          	lbu	a5,0(a5)
  6b4:	ffc58593          	addi	a1,a1,-4
- 6b8:	00f6a023          	sw	a5,0(a3) # 80000000 <end+0x7ffff774>
+ 6b8:	00f6a023          	sw	a5,0(a3) # 80000000 <end+0x7ffff76c>
  6bc:	fe1ff06f          	j	69c <print_hex+0x14>
 
 000006c0 <__divsi3>:
@@ -529,8 +529,8 @@ Disassembly of section .memory:
  774:	3a434347          	fmsub.d	ft6,ft6,ft4,ft7,rmm
  778:	2820                	fld	fs0,80(s0)
  77a:	31202967          	.4byte	0x31202967
- 77e:	2e31                	jal	a9a <end+0x20e>
- 780:	2e31                	jal	a9c <end+0x210>
+ 77e:	2e31                	jal	a9a <end+0x206>
+ 780:	2e31                	jal	a9c <end+0x208>
  782:	0030                	addi	a2,sp,8
  784:	1b41                	addi	s6,s6,-16
  786:	0000                	unimp
@@ -562,77 +562,79 @@ Disassembly of section .memory:
 000007bc <main>:
  7bc:	f9010113          	addi	sp,sp,-112
  7c0:	10000793          	li	a5,256
- 7c4:	02c10513          	addi	a0,sp,44
- 7c8:	06112623          	sw	ra,108(sp)
- 7cc:	00f11423          	sh	a5,8(sp)
- 7d0:	c81ff0ef          	jal	ra,450 <cyclist_initialise_hash>
- 7d4:	00810593          	addi	a1,sp,8
- 7d8:	02c10513          	addi	a0,sp,44
- 7dc:	00200613          	li	a2,2
- 7e0:	cadff0ef          	jal	ra,48c <cyclist_absorb>
- 7e4:	00c10593          	addi	a1,sp,12
- 7e8:	02c10513          	addi	a0,sp,44
- 7ec:	04000693          	li	a3,64
- 7f0:	02000613          	li	a2,32
- 7f4:	d39ff0ef          	jal	ra,52c <cyclist_squeeze>
- 7f8:	06c12083          	lw	ra,108(sp)
- 7fc:	07010113          	addi	sp,sp,112
- 800:	00008067          	ret
- 804:	1b41                	addi	s6,s6,-16
- 806:	0000                	unimp
- 808:	7200                	flw	fs0,32(a2)
- 80a:	7369                	lui	t1,0xffffa
- 80c:	01007663          	bgeu	zero,a6,818 <main+0x5c>
- 810:	0011                	c.nop	4
- 812:	0000                	unimp
- 814:	1004                	addi	s1,sp,32
- 816:	7205                	lui	tp,0xfffe1
- 818:	3376                	fld	ft6,376(sp)
- 81a:	6932                	flw	fs2,12(sp)
- 81c:	7032                	flw	ft0,44(sp)
- 81e:	0030                	addi	a2,sp,8
- 820:	3130                	fld	fa2,96(a0)
- 822:	3332                	fld	ft6,296(sp)
- 824:	3534                	fld	fa3,104(a0)
- 826:	3736                	fld	fa4,360(sp)
- 828:	3938                	fld	fa4,112(a0)
- 82a:	4241                	li	tp,16
- 82c:	46454443          	.4byte	0x46454443
- 830:	4100                	lw	s0,0(a0)
- 832:	0000001b          	.4byte	0x1b
- 836:	6972                	flw	fs2,28(sp)
- 838:	00766373          	csrrsi	t1,0x7,12
- 83c:	1101                	addi	sp,sp,-32
- 83e:	0000                	unimp
- 840:	0400                	addi	s0,sp,512
- 842:	0510                	addi	a2,sp,640
- 844:	7672                	flw	fa2,60(sp)
- 846:	32693233          	.4byte	0x32693233
- 84a:	3070                	fld	fa2,224(s0)
- 84c:	4100                	lw	s0,0(a0)
- 84e:	001e                	c.slli	zero,0x7
- 850:	0000                	unimp
- 852:	6972                	flw	fs2,28(sp)
- 854:	00766373          	csrrsi	t1,0x7,12
- 858:	1401                	addi	s0,s0,-32
- 85a:	0000                	unimp
- 85c:	0500                	addi	s0,sp,640
- 85e:	7672                	flw	fa2,60(sp)
- 860:	32693233          	.4byte	0x32693233
- 864:	3070                	fld	fa2,224(s0)
- 866:	6d5f 7032 0030      	.byte	0x5f, 0x6d, 0x32, 0x70, 0x30, 0x00
- 86c:	1e41                	addi	t3,t3,-16
- 86e:	0000                	unimp
- 870:	7200                	flw	fs0,32(a2)
- 872:	7369                	lui	t1,0xffffa
- 874:	01007663          	bgeu	zero,a6,880 <main+0xc4>
- 878:	0014                	.2byte	0x14
- 87a:	0000                	unimp
- 87c:	7205                	lui	tp,0xfffe1
- 87e:	3376                	fld	ft6,376(sp)
- 880:	6932                	flw	fs2,12(sp)
- 882:	7032                	flw	ft0,44(sp)
- 884:	5f30                	lw	a2,120(a4)
- 886:	326d                	jal	230 <Xoodoo_xorStates+0x3c>
- 888:	3070                	fld	fa2,224(s0)
+ 7c4:	00f11423          	sh	a5,8(sp)
+ 7c8:	02c10513          	addi	a0,sp,44
+ 7cc:	00200793          	li	a5,2
+ 7d0:	06112623          	sw	ra,108(sp)
+ 7d4:	00f10523          	sb	a5,10(sp)
+ 7d8:	c79ff0ef          	jal	ra,450 <cyclist_initialise_hash>
+ 7dc:	00810593          	addi	a1,sp,8
+ 7e0:	02c10513          	addi	a0,sp,44
+ 7e4:	00300613          	li	a2,3
+ 7e8:	ca5ff0ef          	jal	ra,48c <cyclist_absorb>
+ 7ec:	00c10593          	addi	a1,sp,12
+ 7f0:	02c10513          	addi	a0,sp,44
+ 7f4:	04000693          	li	a3,64
+ 7f8:	02000613          	li	a2,32
+ 7fc:	d31ff0ef          	jal	ra,52c <cyclist_squeeze>
+ 800:	06c12083          	lw	ra,108(sp)
+ 804:	07010113          	addi	sp,sp,112
+ 808:	00008067          	ret
+ 80c:	1b41                	addi	s6,s6,-16
+ 80e:	0000                	unimp
+ 810:	7200                	flw	fs0,32(a2)
+ 812:	7369                	lui	t1,0xffffa
+ 814:	01007663          	bgeu	zero,a6,820 <main+0x64>
+ 818:	0011                	c.nop	4
+ 81a:	0000                	unimp
+ 81c:	1004                	addi	s1,sp,32
+ 81e:	7205                	lui	tp,0xfffe1
+ 820:	3376                	fld	ft6,376(sp)
+ 822:	6932                	flw	fs2,12(sp)
+ 824:	7032                	flw	ft0,44(sp)
+ 826:	0030                	addi	a2,sp,8
+ 828:	3130                	fld	fa2,96(a0)
+ 82a:	3332                	fld	ft6,296(sp)
+ 82c:	3534                	fld	fa3,104(a0)
+ 82e:	3736                	fld	fa4,360(sp)
+ 830:	3938                	fld	fa4,112(a0)
+ 832:	4241                	li	tp,16
+ 834:	46454443          	.4byte	0x46454443
+ 838:	4100                	lw	s0,0(a0)
+ 83a:	0000001b          	.4byte	0x1b
+ 83e:	6972                	flw	fs2,28(sp)
+ 840:	00766373          	csrrsi	t1,0x7,12
+ 844:	1101                	addi	sp,sp,-32
+ 846:	0000                	unimp
+ 848:	0400                	addi	s0,sp,512
+ 84a:	0510                	addi	a2,sp,640
+ 84c:	7672                	flw	fa2,60(sp)
+ 84e:	32693233          	.4byte	0x32693233
+ 852:	3070                	fld	fa2,224(s0)
+ 854:	4100                	lw	s0,0(a0)
+ 856:	001e                	c.slli	zero,0x7
+ 858:	0000                	unimp
+ 85a:	6972                	flw	fs2,28(sp)
+ 85c:	00766373          	csrrsi	t1,0x7,12
+ 860:	1401                	addi	s0,s0,-32
+ 862:	0000                	unimp
+ 864:	0500                	addi	s0,sp,640
+ 866:	7672                	flw	fa2,60(sp)
+ 868:	32693233          	.4byte	0x32693233
+ 86c:	3070                	fld	fa2,224(s0)
+ 86e:	6d5f 7032 0030      	.byte	0x5f, 0x6d, 0x32, 0x70, 0x30, 0x00
+ 874:	1e41                	addi	t3,t3,-16
+ 876:	0000                	unimp
+ 878:	7200                	flw	fs0,32(a2)
+ 87a:	7369                	lui	t1,0xffffa
+ 87c:	01007663          	bgeu	zero,a6,888 <main+0xcc>
+ 880:	0014                	.2byte	0x14
+ 882:	0000                	unimp
+ 884:	7205                	lui	tp,0xfffe1
+ 886:	3376                	fld	ft6,376(sp)
+ 888:	6932                	flw	fs2,12(sp)
+ 88a:	7032                	flw	ft0,44(sp)
+ 88c:	5f30                	lw	a2,120(a4)
+ 88e:	326d                	jal	238 <Xoodoo_xorStates+0x44>
+ 890:	3070                	fld	fa2,224(s0)
 	...
