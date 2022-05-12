@@ -2,7 +2,7 @@
 #include "Xoodyak.h"
 #include <stddef.h>
 
-#define MESSAGE_LENGTH 2
+#define MESSAGE_LENGTH 3
 #define XOODYAK_DIGEST_SIZE 32
 
 void main(void){
