@@ -188,10 +188,10 @@ void Xoodoo_Permute(xoodyak_state *state){
 
     
 
-    for (int i = 0; i < 12; i++){
-        print_str("ST:");
-        print_hex(stateAsWords[i], 8);
-    }
+    // for (int i = 0; i < 12; i++){
+    //     print_str("ST:");
+    //     print_hex(stateAsWords[i], 8);
+    // }
     
     roundHWSW_reg(stateAsWords, RC[0]);
 

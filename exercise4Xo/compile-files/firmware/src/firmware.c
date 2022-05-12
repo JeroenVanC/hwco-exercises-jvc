@@ -22,15 +22,15 @@ void main(void){
     /* squeeze out the digest */
     cyclist_squeeze(&cy, digest, XOODYAK_DIGEST_SIZE, 0x40);
 
-    print_str("MSG =");
-    for (int i = 0; i < MESSAGE_LENGTH; i++){
-        print_hex(message[i], 2);
-    }
+    // print_str("MSG =");
+    // for (int i = 0; i < MESSAGE_LENGTH; i++){
+    //     print_hex(message[i], 2);
+    // }
 
-    print_str(" MD =");
-    for (int i = 0; i < XOODYAK_DIGEST_SIZE; i++){
-        print_hex(digest[i], 2);
-    }
+    // print_str(" MD =");
+    // for (int i = 0; i < XOODYAK_DIGEST_SIZE; i++){
+    //     print_hex(digest[i], 2);
+    // }
 
 }
 
