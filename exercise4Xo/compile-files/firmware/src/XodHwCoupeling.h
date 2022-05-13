@@ -34,8 +34,9 @@
 #define  STATE_REG_out_11 (*(volatile unsigned int *)(XOODYAK_BASE_ADDR + 24 * 4))
 
 #define  STATE_RND_FINISHED (*(volatile unsigned int *)(XOODYAK_BASE_ADDR + 25 * 4))
+#define  STATE_RND_RESET (*(volatile unsigned int *)(XOODYAK_BASE_ADDR + 26 * 4))
 
 
-void roundHWSW_reg(uint32_t *stateAsWords, uint32_t rc);
+void roundHWSW_reg(uint32_t *stateAsWords);
 
 #endif

@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "XodHwCoupeling.h"
 
-void roundHWSW_reg(uint32_t *stateAsWords, uint32_t rc)
+void roundHWSW_reg(uint32_t *stateAsWords)
 {
     STATE_REG_in_0 = stateAsWords[0];
     STATE_REG_in_1 = stateAsWords[1];
@@ -41,6 +41,10 @@ void roundHWSW_reg(uint32_t *stateAsWords, uint32_t rc)
     stateAsWords[10] = STATE_REG_out_10; 
     stateAsWords[11] = STATE_REG_out_11; 
 
+    ENABLE_CTRL = 0x00000000;
+
+    STATE_RND_RESET = 0x00000001U; // alle registers resetten
+    STATE_RND_RESET = 0x00000000;
 }
 
 #endif
