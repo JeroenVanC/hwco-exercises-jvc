@@ -183,22 +183,15 @@ void Xoodoo_Permute(xoodyak_state *state){
     Xoodoo_StateToWords(state, stateAsWords);
 
 
-    // voor sotfware only
-    for (int i = 0; i < XOODYAK_ROUNDS; i++){
-        Xoodoo_Round(stateAsWords, RC[i]);
-        //print_str("RND");
-    }
-
-    
-
-    // for (int i = 0; i < 12; i++){
-    //     print_str("ST:");
-    //     print_hex(stateAsWords[i], 8);
+    // // voor sotfware only
+    // for (int i = 0; i < XOODYAK_ROUNDS; i++){
+    //     Xoodoo_Round(stateAsWords, RC[i]);
+    //     //print_str("RND");
     // }
     
 
     // voor hwsw co design
-    //roundHWSW_reg(stateAsWords);
+    roundHWSW_reg(stateAsWords);
 
     Xoodoo_WordsToState(stateAsWords, state);
 
