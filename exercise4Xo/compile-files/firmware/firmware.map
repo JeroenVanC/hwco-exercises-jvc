@@ -27,7 +27,7 @@ LOAD build/firmware.o
 LOAD build/print.o
 LOAD build/start.o
 
-.memory         0x0000000000000000      0xcc4
+.memory         0x0000000000000000      0x988
                 0x0000000000000000                . = 0x0
  *(.init)
  .init          0x0000000000000000       0x9c build/start.o
@@ -36,68 +36,67 @@ LOAD build/start.o
  *(.text)
  .text          0x000000000000009c       0xe4 build/XodHwCoupeling.o
                 0x000000000000009c                roundHWSW_reg
- .text          0x0000000000000180      0x7b8 build/Xoodyak.o
+ .text          0x0000000000000180      0x4ac build/Xoodyak.o
                 0x0000000000000180                CreateEmptyXoodooState
                 0x00000000000001b8                Xoodoo_VectorToState
                 0x0000000000000210                Xoodoo_StateToVector
                 0x0000000000000268                Xoodoo_xorStates
                 0x0000000000000364                Xoodoo_Permute
-                0x00000000000007cc                cyclist_initialise_hash
-                0x0000000000000808                cyclist_absorb
-                0x00000000000008a8                cyclist_squeeze
- .text          0x0000000000000938       0x24 build/firmware.o
-                0x0000000000000938                memcpy
- .text          0x000000000000095c       0xe0 build/print.o
-                0x000000000000095c                print_chr
-                0x0000000000000968                print_str
-                0x0000000000000984                print_dec
-                0x0000000000000a04                print_hex
- .text          0x0000000000000a3c        0x0 build/start.o
- .text          0x0000000000000a3c       0xb4 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
-                0x0000000000000a3c                __divsi3
-                0x0000000000000a44                __udivsi3
-                0x0000000000000a8c                __umodsi3
-                0x0000000000000ac0                __modsi3
+                0x00000000000004c0                cyclist_initialise_hash
+                0x00000000000004fc                cyclist_absorb
+                0x000000000000059c                cyclist_squeeze
+ .text          0x000000000000062c       0x24 build/firmware.o
+                0x000000000000062c                memcpy
+ .text          0x0000000000000650       0xe0 build/print.o
+                0x0000000000000650                print_chr
+                0x000000000000065c                print_str
+                0x0000000000000678                print_dec
+                0x00000000000006f8                print_hex
+ .text          0x0000000000000730        0x0 build/start.o
+ .text          0x0000000000000730       0xb4 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+                0x0000000000000730                __divsi3
+                0x0000000000000738                __udivsi3
+                0x0000000000000780                __umodsi3
+                0x00000000000007b4                __modsi3
  *(*)
- .data          0x0000000000000af0        0x0 build/XodHwCoupeling.o
- .bss           0x0000000000000af0        0x0 build/XodHwCoupeling.o
- .comment       0x0000000000000af0       0x10 build/XodHwCoupeling.o
+ .data          0x00000000000007e4        0x0 build/XodHwCoupeling.o
+ .bss           0x00000000000007e4        0x0 build/XodHwCoupeling.o
+ .comment       0x00000000000007e4       0x10 build/XodHwCoupeling.o
                                          0x11 (size before relaxing)
  .riscv.attributes
-                0x0000000000000b00       0x1c build/XodHwCoupeling.o
- .data          0x0000000000000b1c        0x0 build/Xoodyak.o
- .bss           0x0000000000000b1c        0x0 build/Xoodyak.o
- .rodata        0x0000000000000b1c       0x30 build/Xoodyak.o
- .comment       0x0000000000000b4c       0x11 build/Xoodyak.o
+                0x00000000000007f4       0x1c build/XodHwCoupeling.o
+ .data          0x0000000000000810        0x0 build/Xoodyak.o
+ .bss           0x0000000000000810        0x0 build/Xoodyak.o
+ .comment       0x0000000000000810       0x11 build/Xoodyak.o
  .riscv.attributes
-                0x0000000000000b4c       0x1c build/Xoodyak.o
- .data          0x0000000000000b68        0x0 build/firmware.o
- .bss           0x0000000000000b68        0x0 build/firmware.o
+                0x0000000000000810       0x1c build/Xoodyak.o
+ .data          0x000000000000082c        0x0 build/firmware.o
+ .bss           0x000000000000082c        0x0 build/firmware.o
  .rodata.str1.4
-                0x0000000000000b68        0xe build/firmware.o
- *fill*         0x0000000000000b76        0x2 
- .text.startup  0x0000000000000b78       0xc4 build/firmware.o
-                0x0000000000000b78                main
- .comment       0x0000000000000c3c       0x11 build/firmware.o
+                0x000000000000082c        0xe build/firmware.o
+ *fill*         0x000000000000083a        0x2 
+ .text.startup  0x000000000000083c       0xc4 build/firmware.o
+                0x000000000000083c                main
+ .comment       0x0000000000000900       0x11 build/firmware.o
  .riscv.attributes
-                0x0000000000000c3c       0x1c build/firmware.o
- .data          0x0000000000000c58        0x0 build/print.o
- .bss           0x0000000000000c58        0x0 build/print.o
+                0x0000000000000900       0x1c build/firmware.o
+ .data          0x000000000000091c        0x0 build/print.o
+ .bss           0x000000000000091c        0x0 build/print.o
  .rodata.str1.4
-                0x0000000000000c58       0x11 build/print.o
- .comment       0x0000000000000c69       0x11 build/print.o
+                0x000000000000091c       0x11 build/print.o
+ .comment       0x000000000000092d       0x11 build/print.o
  .riscv.attributes
-                0x0000000000000c69       0x1c build/print.o
- .data          0x0000000000000c85        0x0 build/start.o
- .bss           0x0000000000000c85        0x0 build/start.o
+                0x000000000000092d       0x1c build/print.o
+ .data          0x0000000000000949        0x0 build/start.o
+ .bss           0x0000000000000949        0x0 build/start.o
  .riscv.attributes
-                0x0000000000000c85       0x1f build/start.o
- .data          0x0000000000000ca4        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
- .bss           0x0000000000000ca4        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+                0x0000000000000949       0x1f build/start.o
+ .data          0x0000000000000968        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+ .bss           0x0000000000000968        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
  .riscv.attributes
-                0x0000000000000ca4       0x1f /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
-                0x0000000000000cc4                . = ALIGN (0x4)
- *fill*         0x0000000000000cc3        0x1 
-                0x0000000000000cc4                end = .
+                0x0000000000000968       0x1f /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+                0x0000000000000988                . = ALIGN (0x4)
+ *fill*         0x0000000000000987        0x1 
+                0x0000000000000988                end = .
 LOAD /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a
 OUTPUT(firmware.elf elf32-littleriscv)
